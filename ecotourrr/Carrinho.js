@@ -92,8 +92,7 @@ export default function Carrinho({ navigation }) {
           <View>
             {agencias.map((agencia) => (
               <TouchableHighlight
-                key={agencia.id}
-                onPress={() => openModal(agencia)}>
+                key={agencia.id}>
                 <View style={styles.card}>
                   <Image
                     style={styles.imagem}
