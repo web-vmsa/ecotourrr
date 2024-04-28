@@ -6,6 +6,7 @@ import Login from './Login';
 import Requisitos from './Requisitos';
 import Cadastro from './Cadastro';
 import Carrinho from './Carrinho';
+import Negocio from './Negocio';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export default function App() {
         <Stack.Screen name="Requisitos" component={Requisitos} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="Carrinho" component={Carrinho} />
+        <Stack.Screen name="Negocio" component={Negocio} />
       </Stack.Navigator>
     </NavigationContainer>
   );

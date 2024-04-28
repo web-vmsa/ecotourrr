@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { Text, TextInput, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
-export default function Cadastro({navigation}) {
+export default function Negocio({navigation}) {
+  const [nomeNegocio, setNomeNegocio] = useState('');
+  const [tipoNegocio, setTipoNegocio] = useState('');
+  const [cnpj, setCnpj] = useState('');
+  const [localAtuacao, setLocalAtuacao] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [nome, setNome] = useState('');
-  const [vinculo, setVinculo] = useState('');
+  const [telefone, setTelefone] = useState('');
 
   const handleRegister = () => {
-    if (email === 'teste@gmail.com' && password === 'teste' && nome === 'teste' && vinculo === 'Turista') {
-      navigation.navigate('Home');
+    if (nomeNegocio && tipoNegocio && cnpj && localAtuacao && email && telefone) {
+      alert('Registro Concluído. Obrigado por se registrar. Iremos avaliar seu negócio e entrar em contato.');
+      navigation.navigate('Login');
     } else {
-      alert('Prrencha todos os campos!');
+      alert('Preencha todos os campos');
     }
   };
 
@@ -28,17 +31,31 @@ export default function Cadastro({navigation}) {
 
         <TextInput
           style={styles.input}
-          label="Nome completo"
-          placeholder="Nome completo"
-          value={nome}
-          onChangeText={(text) => setNome(text)}
+          label="Nome do Negócio"
+          placeholder="Nome do Negócio"
+          value={nomeNegocio}
+          onChangeText={(text) => setNomeNegocio(text)}
         />
         <TextInput
           style={styles.input}
-          label="Profissão"
-          placeholder="Profissão"
-          value={vinculo}
-          onChangeText={(text) => setVinculo(text)}
+          label="Tipo de Negócio"
+          placeholder="Tipo de Negócio"
+          value={tipoNegocio}
+          onChangeText={(text) => setTipoNegocio(text)}
+        />
+        <TextInput
+          style={styles.input}
+          label="CNPJ"
+          placeholder="CNPJ"
+          value={cnpj}
+          onChangeText={(text) => setCnpj(text)}
+        />
+        <TextInput
+          style={styles.input}
+          label="Local de Atuação"
+          placeholder="Local de Atuação"
+          value={localAtuacao}
+          onChangeText={(text) => setLocalAtuacao(text)}
         />
         <TextInput
           style={styles.input}
@@ -49,15 +66,14 @@ export default function Cadastro({navigation}) {
         />
         <TextInput
           style={styles.input}
-          label="Senha"
-          secureTextEntry
-          placeholder="Senha"
-          value={password}
-          onChangeText={(text) => setPassword(text)}
+          label="Telefone"
+          placeholder="Telefone"
+          value={telefone}
+          onChangeText={(text) => setTelefone(text)}
         />
 
         <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
-          <Text style={styles.buttonText}>CADASTRE-SE</Text>
+          <Text style={styles.buttonText}>REGISTRAR</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
           <Text style={styles.buttonText}>LOGIN</Text>
@@ -97,8 +113,8 @@ const styles = StyleSheet.create({
   },
   registerButton: {
     height: 40,
-    borderColor: '#fd4e6d',
-    backgroundColor: '#fd4e6d',
+    borderColor: '#4caf50', // Green color for contrast
+    backgroundColor: '#4caf50', // Green color for contrast
     borderWidth: 1,
     borderRadius: 5,
     color: '#333',
@@ -122,5 +138,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 5,
   },
-
 });

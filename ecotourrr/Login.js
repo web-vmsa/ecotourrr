@@ -17,6 +17,10 @@ export default function Login({navigation}) {
     navigation.navigate('Cadastro');
   };
 
+  const handleBusinessRegistration = () => {
+    navigation.navigate('Negocio');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.form}>
@@ -45,6 +49,9 @@ export default function Login({navigation}) {
         </TouchableOpacity>
         <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
           <Text style={styles.buttonText}>CADASTRE-SE</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.businessRegisterButton} onPress={handleBusinessRegistration}>
+          <Text style={styles.buttonText}>CADASTRAR MEU NEGÓCIO</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -94,6 +101,18 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: '#fd4e6d',
     backgroundColor: '#fd4e6d',
+    borderWidth: 1,
+    borderRadius: 5,
+    color: '#333',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontWeight: 'bold',
+    marginTop: 5,
+  },
+  businessRegisterButton: {
+    height: 40,
+    borderColor: '#2e7d32', // Alterada a cor para um verde mais escuro
+    backgroundColor: '#2e7d32', // Alterada a cor para um verde mais escuro
     borderWidth: 1,
     borderRadius: 5,
     color: '#333',
