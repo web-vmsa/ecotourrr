@@ -15,6 +15,10 @@ export default function Carrinho({ navigation }) {
     navigation.navigate('Home');
   };
 
+  const finalizar = () => {
+    navigation.navigate('Compra');
+  };
+
   const acomodacoes = [
     {
       id: 1,
@@ -197,7 +201,7 @@ export default function Carrinho({ navigation }) {
           <TouchableOpacity style={styles.registerButton} onPress={cancelar}>
             <Text style={styles.buttonText}>CANCELAR</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.loginButton}>
+          <TouchableOpacity style={styles.loginButton} onPress={finalizar}>
             <Text style={styles.buttonText}>FINALIZAR COMPRA</Text>
           </TouchableOpacity>
         </View>
