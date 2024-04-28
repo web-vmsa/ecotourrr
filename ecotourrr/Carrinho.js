@@ -118,8 +118,7 @@ export default function Carrinho({ navigation }) {
           <View>
             {acomodacoes.map((acomodacao) => (
               <TouchableHighlight
-                key={acomodacao.id}
-                onPress={() => openModal(acomodacao)}>
+                key={acomodacao.id}>
                 <View style={styles.card}>
                   <Image
                     style={styles.imagem}
@@ -145,8 +144,7 @@ export default function Carrinho({ navigation }) {
           <View>
             {guias.map((guia) => (
               <TouchableHighlight
-                key={guia.id}
-                onPress={() => openModal(guia)}>
+                key={guia.id}>
                 <View style={styles.card}>
                   <Image
                     style={styles.imagem}
@@ -172,8 +170,7 @@ export default function Carrinho({ navigation }) {
           <View>
             {seguros.map((seguro) => (
               <TouchableHighlight
-                key={seguro.id}
-                onPress={() => openModal(seguro)}>
+                key={seguro.id}>
                 <View style={styles.card}>
                   <Image
                     style={styles.imagem}
