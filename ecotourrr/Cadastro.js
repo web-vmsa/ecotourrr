@@ -8,7 +8,7 @@ export default function Cadastro({navigation}) {
   const [vinculo, setVinculo] = useState('');
 
   const handleRegister = () => {
-    if (email === 'teste@gmail.com' && password === 'teste' && nome === 'teste' && vinculo === 'Turista') {
+    if (email && password && nome && vinculo) {
       navigation.navigate('Home');
     } else {
       alert('Prrencha todos os campos!');
